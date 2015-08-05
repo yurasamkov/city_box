@@ -1,7 +1,28 @@
 CityBox::Application.routes.draw do
-  resources :posts
 
-  devise_for :users
+  # scope shallow_path: "sekret" do
+  # devise_for :users do
+  #  resources :posts, shallow: true
+  # end
+  # end
+
+  # devise_for :users do
+  # resources :posts
+  # end
+
+  # resources :users do
+  # resources :posts
+  # end
+
+
+  resources :posts
+  devise_for :users 
+  
+
+
+
+
+
   # get "static_pages/home"
   # get "static_pages/about"
   # get "static_pages/contact"

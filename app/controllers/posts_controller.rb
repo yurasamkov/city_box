@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   respond_to :html
 
   def index
-    @posts = Post.all
+    @posts = current_user.posts #Post.all
     respond_with(@posts)
   end
 
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     @post.save
     respond_with(@post)
   end
