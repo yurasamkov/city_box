@@ -10,26 +10,24 @@ CityBox::Application.routes.draw do
   # resources :posts
   # end
 
-  # resources :users do
-  # resources :posts
-  # end
-
-
+  devise_for :users
   resources :posts
-  devise_for :users 
-  
-
-
-
-
 
   # get "static_pages/home"
   # get "static_pages/about"
   # get "static_pages/contact"
   
   root  'static_pages#home'
-  match '/about',   to: 'static_pages#about',   via: 'get'
-  match '/contact', to: 'static_pages#contact', via: 'get'
+  
+  # так вже ніхто не пише - то застаріле
+  # match '/about',   to: 'static_pages#about',   via: 'get'
+  # match '/contact', to: 'static_pages#contact', via: 'get'
+  # треба так
+  get '/about', to: 'static_pages#about'
+  get '/contact', to: 'static_pages#contact'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
