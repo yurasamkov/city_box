@@ -13,12 +13,14 @@ CityBox::Application.routes.draw do
   # resources :users do
   # resources :posts
   # end
-
-
-  resources :posts
-  devise_for :users 
   
 
+  #resources :posts
+  devise_for :users 
+  
+  resources :posts do
+  resources :comments
+  end
 
 
 

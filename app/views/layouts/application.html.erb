@@ -6,18 +6,18 @@
                                            "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>
   </head>
   <body>
     <%= render 'layouts/header' %>
 
     <div class="container">
+    
 
        <% if user_signed_in? %>
         <%= link_to 'New post', new_post_path, class: 'btn btn-success' %>
         <%= link_to "My post", posts_path, class: 'btn btn-success' %>
+         
       <% else %>
         
       <% end %>
