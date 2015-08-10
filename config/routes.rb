@@ -10,8 +10,17 @@ CityBox::Application.routes.draw do
   # resources :posts
   # end
 
-  devise_for :users
-  resources :posts
+  # resources :users do
+  # resources :posts
+  # end
+  
+  #resources :posts
+  devise_for :users 
+  
+  resources :posts do
+    resources :comments
+  end
+
 
   # get "static_pages/home"
   # get "static_pages/about"
