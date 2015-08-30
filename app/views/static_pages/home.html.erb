@@ -1,3 +1,39 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<h1>All post</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.content %></td>
+        <td><%= post.user_id %></td>
+
+         <% if user_signed_in? %>
+        <td> <%= link_to 'Edit', edit_post_path(post) %> </td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         
+      <% else %>
+        
+      <% end %>
+
+
+       
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
 

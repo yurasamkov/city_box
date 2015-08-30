@@ -1,7 +1,4 @@
-<p>
-  <b>Commenter:</b>
-  <%= comment.commenter %>
-</p>
+<li><%= comment.user.try(:email)%></li> 
  
 <p>
   <b>Comment:</b>

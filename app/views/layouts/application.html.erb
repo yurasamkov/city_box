@@ -14,15 +14,7 @@
     <div class="container">
     
 
-       <% if user_signed_in? %>
-        <%= link_to 'New post', new_post_path, class: 'btn btn-success' %>
-        <%= link_to "My post", posts_path, class: 'btn btn-success' %>
-         
-      <% else %>
-        
-      <% end %>
-  
-
+ 
       
 
       <%= yield %>
