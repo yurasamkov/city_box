@@ -1,8 +1,15 @@
-<h1>Listing posts  нгкф</h1>
-
-<table>
+<h1>Listing posts</h1>
+<% if user_signed_in? %>
+  <%= link_to 'New post', new_post_path, class: 'btn btn-success' %>
+<%end%>  
+</br> 
+</br> 
+</br>
+</br>       
+<table class="table">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Content</th>
       <th>User</th>
       <th></th>
@@ -10,31 +17,22 @@
       <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <th></th>
         <td><%= post.content %></td>
         <td><%= post.user_id %></td>
+        <td><%= link_to 'Show', post %></td>
 
+        <% if user_signed_in? %>
+          <td> <%= link_to 'Edit', edit_post_path(post) %> </td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
 
-         <% if user_signed_in? %>
-        <td> <%= link_to 'Edit', edit_post_path(post) %> </td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         
-      <% else %>
-        
-      <% end %>
-
-
-       
-        
-        
-        
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
 
