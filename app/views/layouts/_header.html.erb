@@ -6,12 +6,12 @@
             <ul class="nav pull-left">              
               <li><%= link_to "About",   about_path %></li>
               <li><%= link_to "Contact", contact_path %></li>              
+              <li><%= link_to "My posts",   posts_path %></li>              
             </ul>
             <ul class="nav pull-right">
               <% if user_signed_in? %>
                 <li><%= link_to current_user.email, edit_user_registration_path %></li> 
                 <li><%= link_to "Sign out",   destroy_user_session_path, method: :delete %></li>
-                <li><%= link_to "My post",   posts_path %></li>              
               <% else %>
                 <li><%= link_to "Sign in",   new_user_session_path %></li>
                 <li><%= link_to "Sign up",   new_user_registration_path %></li>
