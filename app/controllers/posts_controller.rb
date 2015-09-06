@@ -36,6 +36,12 @@ class PostsController < ApplicationController
     respond_with(@post)
   end
 
+  def my_post
+       @posts = current_user.posts #Post.all
+    respond_with(@posts)
+    end
+
+
   private
     def set_post
       @post = Post.find(params[:id])
@@ -44,4 +50,6 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:content, :user_id)
     end
+
+    
 end

@@ -1,10 +1,6 @@
 CityBox::Application.routes.draw do
 
-  # scope shallow_path: "sekret" do
-  # devise_for :users do
-  #  resources :posts, shallow: true
-  # end
-  # end
+  
 
   # devise_for :users do
   # resources :posts
@@ -21,21 +17,22 @@ CityBox::Application.routes.draw do
     resources :comments
   end
 
+  get '/my_posts', to: 'posts#index'
+
 
   # get "static_pages/home"
   # get "static_pages/about"
   # get "static_pages/contact"
   
   root  'static_pages#home'
-  
+
+
   # так вже ніхто не пише - то застаріле
   # match '/about',   to: 'static_pages#about',   via: 'get'
   # match '/contact', to: 'static_pages#contact', via: 'get'
   # треба так
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
-
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
