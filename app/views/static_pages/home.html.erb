@@ -12,8 +12,11 @@
       <th>ID</th>
       <th>Content</th>
       <th>User</th>
-      <th></th>
-      <th></th>
+      <th>Post</th>
+      <th>Comment</th>
+      <th>---</th>
+      <th>---</th>
+      <th>---</th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +25,8 @@
         <td><%= post.id %></td>
         <td><%= post.content %></td>
         <td><%= post.user.try(:email) %></td>
-        <th></th>
+        <th><%= post.scheduled_at %></th>
+        <th><%= post.last_commented_at %></th>
         <td><%= link_to 'Show', post %></td>
         <% if user_signed_in?  && post.user_id == current_user.id %>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
