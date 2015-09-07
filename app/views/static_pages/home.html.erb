@@ -13,6 +13,7 @@
       <th>Content</th>
       <th>User</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,7 @@
         <td><%= post.id %></td>
         <td><%= post.content %></td>
         <td><%= post.user.try(:email) %></td>
+        <th></th>
         <td><%= link_to 'Show', post %></td>
         <% if user_signed_in?  && post.user_id == current_user.id %>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
