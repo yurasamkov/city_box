@@ -1,7 +1,7 @@
 class AddScheduledAtColumnToPosts < ActiveRecord::Migration
 
   def change
-    add_column :posts, :scheduled_at, :string
+    add_column :posts, :scheduled_at, :datetime
   end
 
 end
