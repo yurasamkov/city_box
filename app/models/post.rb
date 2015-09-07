@@ -7,16 +7,16 @@ class Post < ActiveRecord::Base
     validates :content, presence: true, length: { maximum: 140 }
 
     before_create :scheduled_at_created
-    before_update :scheduled_at_update
+    before_update :scheduled_at_updated
 
     private
 
       def scheduled_at_created
-        scheduled_at = created_at + 10
+        self.scheduled_at = self.created_at + 10
       end
 
-      def scheduled_at_update
-        scheduled_at = update_at + 10
+      def scheduled_at_updated
+        self.scheduled_at = self.updated_at + 10
       end
 
 end
