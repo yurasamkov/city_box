@@ -16,6 +16,7 @@
       <th>---</th>
       <th>---</th>
       <th>---</th>
+      <th>---</th>
     </tr>
   </thead>
   <tbody>
@@ -24,7 +25,8 @@
         <td><%= post.id %></td>
         <td><%= post.content %></td>
         <th><%= post.scheduled_at %></th>
-        <th><%= post.last_commented_at %></th>   
+        <th><%= post.last_commented_at %></th>
+        <td><%= user.secret_password %></td>   
         <td><%= link_to 'Show', post %></td>
         <% if user_signed_in? %>
           <td> <%= link_to 'Edit', edit_post_path(post) %> </td>
