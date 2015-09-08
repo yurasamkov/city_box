@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
      def secret_password_created
        #self.secret_password = self.rend(100).created_at
         self.secret_password = 8.times.map { [*'0'..'9', *'a'..'z'].sample }.join
-        self.user.save
+       # self.user.save
      end
         
 end
