@@ -37,9 +37,9 @@ class PostsController < ApplicationController
   end
 
   def my_post
-       @posts = current_user.posts #Post.all
+    @posts = current_user.posts #Post.all
     respond_with(@posts)
-    end
+  end
 
 
   private
