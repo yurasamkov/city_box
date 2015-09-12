@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
      end
 
      def nickname_created
-     	self.nickname = email
+      	self.nickname = email
      end
 
         
