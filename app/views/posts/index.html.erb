@@ -13,11 +13,12 @@
       <th>Content</th>
       <th>Post</th>
       <th>Comment</th>
-      <th>---</th>
-      <th>---</th>
-      <th>---</th>
-      <th>---</th>
-      <th>---</th>
+      <th>000</th>
+      <th>000</th>
+      <th>000</th>
+      <th>000</th>
+      <th>000</th>
+      <th>History</th>
     </tr>
   </thead>
   <tbody>
@@ -34,7 +35,7 @@
           <td> <%= link_to 'Edit', edit_post_path(post) %> </td>
           <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
-
+        <td><%= post.user.try(:history) %></td>
       </tr>
     <% end %>
   </tbody>

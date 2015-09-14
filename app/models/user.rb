@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   before_create :secret_password_created
   before_create :nickname_created
 
+  before_update :history_updated
+
     private
 
      def secret_password_created
@@ -19,6 +21,10 @@ class User < ActiveRecord::Base
 
      def nickname_created
       	self.nickname = self.email.split("@")[0]
+     end
+
+     def history_updated
+      self.history = self.updated_at
      end
 
         
