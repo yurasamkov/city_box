@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
      end
 
      def nickname_created
-      	self.nickname = email
+      	self.nickname = self.email.split("@")[0]
      end
 
         
