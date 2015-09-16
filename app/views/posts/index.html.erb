@@ -13,12 +13,12 @@
       <th>Content</th>
       <th>Post</th>
       <th>Comment</th>
-      <th>Abra-kadabra</th>
-      <th>Nicknames</th>
+      
+      
       <th>Show</th>
       <th>Edit</th>
       <th>Destroy</th>
-      <th>History</th>
+     
     </tr>
   </thead>
   <tbody>
@@ -28,14 +28,13 @@
         <td><%= post.content %></td>
         <th><%= post.scheduled_at %></th>
         <th><%= post.last_commented_at %></th>
-        <td><%= post.user.try(:secret_password) %></td>
-        <td><%= post.user.try(:nickname) %></td>
+        
         <td><%= link_to 'Show', post %></td>
         <% if user_signed_in? %>
           <td> <%= link_to 'Edit', edit_post_path(post) %> </td>
           <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
-        <td><%= post.user.try(:history) %></td>
+        
       </tr>
     <% end %>
   </tbody>
