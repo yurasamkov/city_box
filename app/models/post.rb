@@ -1,17 +1,22 @@
 class Post < ActiveRecord::Base
 	
 	  #attr_accessible :content, :name, :title
-    
+
     has_many :comments
 	  belongs_to :user
 
     validates :content, presence: true, length: { maximum: 140 }
-    validates :post, acceptance: { accept: "article", "biography", "news" }
 
+    POST_TYPES = %w(article biography news)    
+    validates :p_type,  inclusion: { in: POST_TYPES, message: "%{value} is not a valid post's type" }
+
+    #validates :p_type, inclusion: { in: %w(article biography news),
+    #message: "%{value} is not a valid post" }
+    
     before_create :scheduled_at_created
     before_update :scheduled_at_updated
 
-       
+
     private
 
       def scheduled_at_created

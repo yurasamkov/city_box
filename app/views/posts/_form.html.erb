@@ -14,18 +14,15 @@
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
+  </div> 
+ 
+  <div class="field">
+    <%= f.label 'Type' %><br> 
+    <%= f.select :p_type, Post::POST_TYPES %>
   </div>
 
-  <div class="field">
-    <select name="type_post">
-      <option value="other">select</option>
-      <option value="article">article</option>
-      <option value="biography">biography</option>
-      <option value="news">news</option>
-    </select>
-  </div>
- 
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
