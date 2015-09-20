@@ -10,12 +10,8 @@ class Post < ActiveRecord::Base
     POST_TYPES = %w(article biography news)    
     validates :p_type,  inclusion: { in: POST_TYPES, message: "%{value} is not a valid post's type" }
 
-    #validates :p_type, inclusion: { in: %w(article biography news),
-    #message: "%{value} is not a valid post" }
-    
     before_create :scheduled_at_created
     before_update :scheduled_at_updated
-
 
     private
 
