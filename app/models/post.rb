@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
     has_many :comments
 	  belongs_to :user
 
-    validates :content, presence: true, length: { maximum: 140 }
+    validates :content, presence: true, length: { maximum: 140 }, uniqueness: true
 
     POST_TYPES = %w(article biography news)    
     validates :p_type,  inclusion: { in: POST_TYPES, message: "%{value} is not a valid post's type" }
